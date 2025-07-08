@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light;
+}
+
+.flexCenter {
+  @apply items-center justify-center;
+}
+
+.flexBetween {
+  @apply items-center justify-between;
+}
