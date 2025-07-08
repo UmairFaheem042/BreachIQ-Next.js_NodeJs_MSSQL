@@ -1,5 +1,3 @@
-BreachIQ – Full Stack README (Markdown Source)
-
 # 🔐 BreachIQ – Full Stack App
 
 BreachIQ is a secure full stack web application that allows users to track and manage their email breach history using the LeakCheck API. The frontend is built using **Next.js 15**, while the backend leverages **Node.js, Express.js, and MS SQL**.
