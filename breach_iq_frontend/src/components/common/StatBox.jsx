@@ -2,7 +2,7 @@ import React from "react";
 
 const StatBox = ({ label, count, email, name }) => {
   return (
-    <div className="p-3 rounded-md w-fit border border-gray-100">
+    <div className="flex-1 md:flex-none p-3 rounded-md w-fit border border-gray-100">
       <div className="stat-title">{label}</div>
       <div className="mt-2 stat-actions">
         <button

@@ -7,9 +7,6 @@ const Pagination = ({ currentPage, totalPages }) => {
   const searchParams = useSearchParams();
 
   const handlePageChange = (page) => {
-    // Prevent API call if:
-    // 1. There is only one page
-    // 2. User clicks the same page number
     if (page === currentPage || totalPages === 1) return;
 
     const params = new URLSearchParams(searchParams);

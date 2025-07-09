@@ -1,8 +1,6 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import { backend_base_url } from "../constants";
 import axiosInstance from "../axios";
 
 export const getEmailToTrackDetails = async () => {
@@ -11,32 +9,8 @@ export const getEmailToTrackDetails = async () => {
     const authToken = cookieStore.get("token");
 
     if (!authToken) {
-      // return null;
       return { success: false, message: "Unauthorized" };
     }
-
-    // const response = await fetch(`${backend_base_url}/tracked-emails/track`, {
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Cookie: `token=${authToken.value}`, // Send token as cookie
-    //   },
-    //   cache: "no-store", // Ensure fresh data
-    // });
-
-    // if (!response.ok) {
-    //   return {
-    //     success: false,
-    //     message: data?.message,
-    //   };
-    // }
-
-    // const data = await response.json();
-
-    // return {
-    //   success: true,
-    //   message: data?.message,
-    // };
 
     const { data } = await axiosInstance.get("/tracked-emails/track", {
       headers: {
@@ -49,13 +23,12 @@ export const getEmailToTrackDetails = async () => {
       message: data?.message,
     };
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return {
       success: false,
       message: error?.response?.data?.message || "Scan failed",
     };
   }
-  // redirect(`/dashboard`);
 };
 
 export const getAllBreaches = async () => {
@@ -75,7 +48,6 @@ export const getAllBreaches = async () => {
 
     return data;
   } catch (error) {
-    // console.log(error);
     console.error("Failed to fetch breaches:", error?.response?.data || error);
   }
 };
@@ -100,11 +72,7 @@ export const getAllBreachHistory = async (page = 1) => {
 
     return data;
   } catch (error) {
-    // console.log(error);
-    console.error(
-      "Error getting breach history:",
-      error?.response?.data || error
-    );
+    console.error("Error getting breach history:", error);
     return null;
   }
 };
@@ -126,7 +94,6 @@ export const getLastBreach = async () => {
 
     return data?.data;
   } catch (error) {
-    // console.error(error);
     console.error("Error getting last breach:", error?.response?.data || error);
     return null;
   }

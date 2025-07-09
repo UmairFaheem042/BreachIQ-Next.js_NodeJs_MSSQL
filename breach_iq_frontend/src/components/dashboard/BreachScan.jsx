@@ -6,11 +6,13 @@ const BreachScan = ({ breachData }) => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-2xl font-semibold">Last Scan Report</h2>
+      <h2 className="text-xl md:text-2xl text-center md:text-left font-semibold">
+        Last Scan Report
+      </h2>
       {breach_count ? (
         <>
-          <div role="alert" className="mt-5 alert alert-error alert-soft w-fit">
-            <p>
+          <div role="alert" className="flex md:block mt-5 alert alert-error alert-soft w-full md:w-fit">
+            <p className="w-full text-center">
               Last Breach Report done on{" "}
               <span className="font-semibold">{formatDate(last_checked)}</span>
             </p>

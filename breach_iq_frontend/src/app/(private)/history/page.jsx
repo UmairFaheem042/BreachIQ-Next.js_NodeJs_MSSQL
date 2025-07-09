@@ -3,23 +3,20 @@ import StatBox from "@/components/common/StatBox";
 import BreachTable from "@/components/history/BreachTable";
 import Pagination from "@/components/history/Pagination";
 import { getAllBreachHistory } from "@/lib/actions/breach";
-import { redirect } from "next/navigation";
 
 const History = async ({ searchParams }) => {
   const { page } = (await searchParams) || 1;
   const breach_count = 1;
   const resp = await getAllBreachHistory(page);
 
-  // if (!resp) redirect("/login");
-
   return (
     <AnimatedSection>
-        <div className="min-h-[60vh] flex flex-col gap-5">
-          <h1 className="text-4xl font-normal">Breach Leak History</h1>
-          <div className="flex gap-2">
+        <div className="mt-10 px-3 md:px-6 max-w-[1400px] w-full mx-auto min-h-[60vh] flex flex-col gap-5">
+          <h1 className="text-center md:text-left text-3xl md:text-4xl font-normal">Breach Leak History</h1>
+          <div className="flex gap-2 stats">
             <StatBox label="Current Email" email={resp.user} />
             <StatBox label="Breach Checks Done" count={resp.totalRecords} />
-            <StatBox label="Highest Breacher" name="Stealer logs" />
+            {/* <StatBox label="Highest Breacher" name="Stealer logs" /> */}
           </div>
           {breach_count === 0 ? (
             <div className="flex-1 flex flexCenter w-[400px] uppercase font-semibold text-gray-400 mx-auto text-center text-2xl">

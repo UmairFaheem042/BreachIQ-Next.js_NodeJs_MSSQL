@@ -4,15 +4,13 @@ import React from "react";
 
 const BreachTimeline = async () => {
   const data = await getLastBreach();
-
-  console.log("Inside")
  
   // const sortedBreaches = sortBreaches(data);
 
   return (
     <ul className="mt-5 mx-auto w-full min-w-[350px] timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
       {data?.map((item, index) => (
-        <li key={item.id}>
+        <li key={item._id}>
           <div className="timeline-middle">
             <svg
               xmlns="http://www.w3.org/2000/svg"

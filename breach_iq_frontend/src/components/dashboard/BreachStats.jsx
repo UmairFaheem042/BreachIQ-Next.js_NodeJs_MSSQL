@@ -29,8 +29,8 @@ const BreachStats = ({ breachData }) => {
   };
 
   return (
-    <div className="flex justify-between items-center">
-      <div className="w-[600px] mt-2 rounded-md h-[150px] flex items-center gap-2 justify-center">
+    <div className="flex flex-wrap justify-center gap-5 md:justify-between items-center">
+      <div className="w-full md:w-fit mt-5 rounded-md flex items-center gap-2 justify-center">
         {!breachData ? (
           // <SkeletonStat />
           <p className="text-2xl text-center">
@@ -45,7 +45,7 @@ const BreachStats = ({ breachData }) => {
         )}
       </div>
       <button
-        className={`btn btn-success text-xl w-35 h-35 rounded-full ${
+        className={`btn btn-success md:text-xl md:w-35 md:h-35  md:rounded-full ${
           loading ? "btn-disabled loading" : ""
         }`}
         onClick={handleScan}
