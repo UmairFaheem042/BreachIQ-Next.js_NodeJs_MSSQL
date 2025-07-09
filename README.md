@@ -6,7 +6,7 @@ BreachIQ is a secure full stack web application that allows users to track and m
 
 ## ✨ Live Demo
 
-> Coming soon...
+https://github.com/user-attachments/assets/5b533479-718d-4e32-ada4-ca59bcf8e323
 
 ---
 
