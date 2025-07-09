@@ -10,7 +10,7 @@ const BreachTimeline = async () => {
   return (
     <ul className="mt-5 mx-auto w-full min-w-[350px] timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
       {data?.map((item, index) => (
-        <li key={item._id}>
+        <li key={item.id}>
           <div className="timeline-middle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
